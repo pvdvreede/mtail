@@ -39,7 +39,6 @@ func main() {
 
 	for i, arg := range os.Args {
 		go func(fileNumber int, filename string, outputChan chan string) {
-			fmt.Println("The number is " + strconv.Itoa(fileNumber+30))
 			t, _ := tail.TailFile(filename, tail.Config{
 				Follow: true, LimitRate: 15, MaxLineSize: 120,
 			})
